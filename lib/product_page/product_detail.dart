@@ -97,7 +97,7 @@ class ProductDetail extends StatelessWidget {
                         // Respond to button press
                       },
                       child: Text(
-                        'Comprar agora',
+                        'Comprar',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -115,7 +115,7 @@ class ProductDetail extends StatelessWidget {
                         // Respond to button press
                       },
                       child: Text(
-                        'Adicionar ao Carrinho',
+                        'Adicionar ao Carrinho agora',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
