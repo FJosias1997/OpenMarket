@@ -98,7 +98,7 @@ class ProductDetail extends StatelessWidget {
                       },
                       child: Text(
                         'Comprar agora',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   ),
@@ -116,7 +116,7 @@ class ProductDetail extends StatelessWidget {
                       },
                       child: Text(
                         'Adicionar ao Carrinho',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   ),
