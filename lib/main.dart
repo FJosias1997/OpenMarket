@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
         title: Text(
-          'OpenMarket',
+          'OpenMarket - free',
           style: TextStyle(color: Colors.white),
         ),
       ),
