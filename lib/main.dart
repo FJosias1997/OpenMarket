@@ -1,4 +1,4 @@
-import 'package:comment_api/home_page.dart';
+import 'package:comment_api/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

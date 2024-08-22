@@ -1,55 +1,49 @@
+import "package:comment_api/data/models/post_model.dart";
 import "package:flutter/material.dart";
 
 class SpecsProducts extends StatelessWidget {
-  final String descriptionSpec;
-  final String brandSpec;
-  final String categorySpec;
-  final String titleSpec;
-  final double priceSpec;
+  final PostModel product;
 
-  SpecsProducts(
-      {required this.descriptionSpec,
-      required this.brandSpec,
-      required this.categorySpec,
-      required this.titleSpec,
-      required this.priceSpec});
+  SpecsProducts({
+    required this.product,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(
-          "O Que você precisa saber sobre este produto",
+          "Descrição",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
         ),
         SizedBox(height: 10),
         Text(
-          descriptionSpec,
+          product.description,
           style: TextStyle(fontSize: 16),
         ),
         SizedBox(height: 20),
         Text(
-          "Características",
+          "Especificação",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
         ),
         SizedBox(height: 10),
         Text(
-          "Marca: " + brandSpec,
+          "Marca: " + '${product.brand ?? ''}',
           style: TextStyle(fontSize: 16),
         ),
         SizedBox(height: 10),
         Text(
-          "Categoria: " + categorySpec,
+          "Categoria: " + product.category,
           style: TextStyle(fontSize: 16),
         ),
         SizedBox(height: 10),
         Text(
-          "Modelo: " + titleSpec,
+          "Modelo: " + '${product.brand ?? ''}',
           style: TextStyle(fontSize: 16),
         ),
         SizedBox(height: 10),
         Text(
-          "Preço: R\$" + priceSpec.toString(),
+          "Preço: R\$" + product.price.toString(),
           style: TextStyle(fontSize: 16),
         ),
         SizedBox(height: 10),

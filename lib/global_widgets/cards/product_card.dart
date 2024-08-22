@@ -1,6 +1,6 @@
 import 'package:comment_api/data/models/post_model.dart';
 import 'package:comment_api/extensions/context_extensions.dart';
-import 'package:comment_api/product_page/product_detail_page.dart';
+import 'package:comment_api/pages/product_page/product_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
@@ -31,7 +31,6 @@ class ProductCard extends StatelessWidget {
                       'R\$ ' + product.price.toString(),
                       style: context.theme.textTheme.bodyLarge?.copyWith(
                         fontWeight: FontWeight.w500,
-                        color: Colors.black,
                       ),
                     ),
                     Text(

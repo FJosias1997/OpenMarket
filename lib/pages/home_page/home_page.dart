@@ -1,8 +1,8 @@
 import 'package:comment_api/data/bloc/home_bloc.dart';
 import 'package:comment_api/data/bloc/home_event.dart';
 import 'package:comment_api/data/bloc/home_state.dart';
-import 'package:comment_api/widgets/appbar/main_appbar.dart';
-import 'package:comment_api/widgets/cards/product_card.dart';
+import 'package:comment_api/global_widgets/appbar/main_appbar.dart';
+import 'package:comment_api/global_widgets/cards/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
