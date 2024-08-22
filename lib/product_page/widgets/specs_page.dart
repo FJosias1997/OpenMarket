@@ -5,7 +5,7 @@ class SpecsProducts extends StatelessWidget {
   final String brandSpec;
   final String categorySpec;
   final String titleSpec;
-  final int priceSpec;
+  final double priceSpec;
 
   SpecsProducts(
       {required this.descriptionSpec,

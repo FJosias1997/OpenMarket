@@ -1,45 +1,26 @@
+import 'package:comment_api/data/models/post_model.dart';
 import 'package:comment_api/product_page/widgets/products_list_images_widget.dart';
 import 'package:comment_api/product_page/widgets/rating_products_widget.dart';
 import 'package:comment_api/product_page/widgets/specs_page.dart';
+import 'package:comment_api/widgets/appbar/main_appbar.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetail extends StatelessWidget {
-  final String title;
-  final String description;
-  final int price;
-  final double rating;
-  final int stock;
-  final String brand;
-  final String category;
-  final String thumbnail;
-  final List images;
+class ProductDetailPage extends StatelessWidget {
+  final PostModel product;
 
-  ProductDetail({
-    required this.title,
-    required this.description,
-    required this.price,
-    required this.rating,
-    required this.stock,
-    required this.brand,
-    required this.category,
-    required this.thumbnail,
-    required this.images,
+  ProductDetailPage({
+    required this.product,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        title: Text("Details"),
-      ),
+      appBar: MainAppBar(title: 'Details'),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //Image.network(thumbnail),
-            // SizedBox(height: 16),
             Text(
               "Novo | 55000 vendidos",
               style: TextStyle(fontSize: 11, color: Colors.grey),
@@ -48,15 +29,15 @@ class ProductDetail extends StatelessWidget {
             //Classificação estrelas
             Row(
               children: [
-                Text("Classificação: " + rating.toString(),
+                Text("Classificação: " + product.rating.toString(),
                     style: TextStyle(fontSize: 11, color: Colors.grey)),
-                RatingProducts(ratings: rating),
+                RatingProducts(ratings: product.rating),
               ],
             ),
             //fim Classificação Estrelas
             SizedBox(height: 11),
             Text(
-              title,
+              product.title,
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
@@ -68,9 +49,9 @@ class ProductDetail extends StatelessWidget {
               child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: images.length,
+                itemCount: product.images.length,
                 itemBuilder: (context, index) {
-                  final urlImage = images[index];
+                  final urlImage = product.images[index];
                   return ProductsListImages(urlImage: urlImage);
                 },
               ),
@@ -79,11 +60,11 @@ class ProductDetail extends StatelessWidget {
 
             SizedBox(height: 10),
             Text(
-              'R\$ ' + price.toString(),
+              'R\$ ' + product.price.toString(),
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
             ),
             Text(
-              'em 7x de R\$' + ((price / 7).round()).toString(),
+              'em 7x de R\$' + ((product.price / 7).round()).toString(),
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
             ),
             SizedBox(height: 10),
@@ -109,7 +90,7 @@ class ProductDetail extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.cyan[200],
+                        backgroundColor: Colors.cyan[200],
                       ),
                       onPressed: () {
                         // Respond to button press
@@ -128,11 +109,11 @@ class ProductDetail extends StatelessWidget {
             //a partir de outra página.
             SizedBox(height: 20),
             SpecsProducts(
-              descriptionSpec: description,
-              brandSpec: brand,
-              categorySpec: category,
-              titleSpec: title,
-              priceSpec: price,
+              descriptionSpec: product.description,
+              brandSpec: product.brand ?? '',
+              categorySpec: product.category,
+              titleSpec: product.title,
+              priceSpec: product.price,
             ),
           ],
         ),
