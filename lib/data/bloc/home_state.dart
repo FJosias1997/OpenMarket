@@ -12,4 +12,8 @@ class HomeLoaded implements HomeState {
   HomeLoaded({required this.list});
 }
 
-class HomeErrors implements HomeState {}
+class HomeErrors implements HomeState {
+  final String message;
+
+  HomeErrors({required this.message});
+}

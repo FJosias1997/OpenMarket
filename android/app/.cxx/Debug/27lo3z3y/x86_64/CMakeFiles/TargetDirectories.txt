@@ -1,0 +1,2 @@
+/Users/josiasfelix/Documents/app/teste/OpenMarket/android/app/.cxx/Debug/27lo3z3y/x86_64/CMakeFiles/rebuild_cache.dir
+/Users/josiasfelix/Documents/app/teste/OpenMarket/android/app/.cxx/Debug/27lo3z3y/x86_64/CMakeFiles/edit_cache.dir

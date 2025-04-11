@@ -1,0 +1,2 @@
+/Users/josiasfelix/Documents/app/teste/OpenMarket/android/app/.cxx/Debug/411w376k/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/josiasfelix/Documents/app/teste/OpenMarket/android/app/.cxx/Debug/411w376k/armeabi-v7a/CMakeFiles/rebuild_cache.dir
