@@ -1,4 +1,4 @@
-import 'package:comment_api/data/models/post_model.dart';
+import 'package:openmarket/data/models/post_model.dart';
 
 abstract class HomeState {}
 
@@ -7,9 +7,15 @@ class HomeInitial implements HomeState {}
 class HomeLoading implements HomeState {}
 
 class HomeLoaded implements HomeState {
-  final List<PostModel> list;
+  final List<ProductModel> list;
 
   HomeLoaded({required this.list});
+}
+
+class SearchLoaded implements HomeState {
+  final List<ProductModel> list;
+
+  SearchLoaded({required this.list});
 }
 
 class HomeErrors implements HomeState {

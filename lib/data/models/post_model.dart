@@ -1,4 +1,4 @@
-class PostModel {
+class ProductModel {
   final int id;
   final String title;
   final String description;
@@ -11,7 +11,7 @@ class PostModel {
   final String thumbnail;
   final List images;
 
-  PostModel({
+  ProductModel({
     required this.id,
     required this.title,
     required this.description,
@@ -24,8 +24,8 @@ class PostModel {
     required this.images,
   });
 
-  factory PostModel.fromJson(Map<String, dynamic> json) {
-    return PostModel(
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
+    return ProductModel(
       id: json['id'],
       title: json['title'],
       description: json['description'],

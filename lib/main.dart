@@ -1,4 +1,5 @@
-import 'package:comment_api/pages/home_page/home_page.dart';
+import 'package:openmarket/pages/home_page/home_page.dart';
+import 'package:openmarket/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'OpenMarket - A Free tax online Shopping mall never seen before ',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: appTheme(),
       home: HomePage(),
     );
   }

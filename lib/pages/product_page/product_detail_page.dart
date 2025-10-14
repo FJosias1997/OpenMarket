@@ -1,14 +1,14 @@
-import 'package:comment_api/data/models/post_model.dart';
-import 'package:comment_api/global_widgets/buttons/primary_button.dart';
-import 'package:comment_api/global_widgets/buttons/secondary_button.dart';
-import 'package:comment_api/pages/product_page/widgets/products_list_images_widget.dart';
-import 'package:comment_api/pages/product_page/widgets/rating_products_widget.dart';
-import 'package:comment_api/pages/product_page/widgets/specs_page.dart';
-import 'package:comment_api/global_widgets/appbar/main_appbar.dart';
+import 'package:openmarket/data/models/post_model.dart';
+import 'package:openmarket/global_widgets/buttons/primary_button.dart';
+import 'package:openmarket/global_widgets/buttons/secondary_button.dart';
+import 'package:openmarket/pages/product_page/widgets/products_list_images_widget.dart';
+import 'package:openmarket/pages/product_page/widgets/rating_products_widget.dart';
+import 'package:openmarket/pages/product_page/widgets/specs_page.dart';
+import 'package:openmarket/global_widgets/appbar/main_appbar.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailPage extends StatelessWidget {
-  final PostModel product;
+  final ProductModel product;
 
   ProductDetailPage({
     required this.product,
@@ -81,7 +81,7 @@ class ProductDetailPage extends StatelessWidget {
                     onPressed: () {},
                   ),
 
-                  SizedBox(height: 8),
+                  SizedBox(height: 16),
                   SecondaryButton(
                     title: 'Adicionar ao carrinho',
                     onPressed: () {},
@@ -91,7 +91,7 @@ class ProductDetailPage extends StatelessWidget {
               ),
             ),
             // Início das características do produto.
-            SizedBox(height: 16),
+            SizedBox(height: 24),
             SpecsProducts(product: product),
           ],
         ),

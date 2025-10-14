@@ -1,8 +1,8 @@
-import 'package:comment_api/data/bloc/home_bloc.dart';
-import 'package:comment_api/data/bloc/home_event.dart';
-import 'package:comment_api/data/bloc/home_state.dart';
-import 'package:comment_api/global_widgets/appbar/main_appbar.dart';
-import 'package:comment_api/global_widgets/cards/product_card.dart';
+import 'package:openmarket/data/bloc/home_bloc.dart';
+import 'package:openmarket/data/bloc/home_event.dart';
+import 'package:openmarket/data/bloc/home_state.dart';
+import 'package:openmarket/global_widgets/appbar/main_appbar.dart';
+import 'package:openmarket/global_widgets/cards/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,9 +25,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
       appBar: MainAppBar(
         title: 'OpenMarket',
+        onSearch: (value) {
+          _homeBloc.add(SearchProductsEvent(value));
+        },
       ),
       body: BlocBuilder<HomeBloc, HomeState>(
           bloc: _homeBloc,
@@ -40,15 +42,14 @@ class _HomePageState extends State<HomePage> {
               return Center(
                 child: Text("Erro"),
               );
-            } else if (state is HomeLoaded) {
+            } else if (state is HomeLoaded || state is SearchLoaded) {
+              final list = (state as dynamic).list;
               return Padding(
                 padding: const EdgeInsets.all(16),
                 child: ListView.builder(
-                  itemCount: state.list.length,
+                  itemCount: list.length,
                   itemBuilder: (_, index) {
-                    return ProductCard(
-                      product: state.list[index],
-                    );
+                    return ProductCard(product: list[index]);
                   },
                 ),
               );

@@ -1,4 +1,4 @@
-import 'package:comment_api/extensions/context_extensions.dart';
+import 'package:openmarket/extensions/context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryButton extends StatelessWidget {
@@ -10,17 +10,35 @@ class SecondaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: context.theme.colorScheme.tertiary,
+    return Container(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            Color.fromARGB(255, 39, 212, 183),
+            Color.fromARGB(255, 0, 0, 0),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
-        onPressed: onPressed,
-        child: Text(
-          title,
-          style: context.theme.textTheme.titleMedium?.copyWith(
-            color: context.theme.colorScheme.onTertiary,
+        borderRadius: BorderRadius.circular(40),
+        boxShadow: [
+          BoxShadow(
+            color:
+                const Color.fromARGB(255, 17, 176, 166).withValues(alpha: .4),
+            blurRadius: 20,
+            offset: const Offset(0, 1),
+          ),
+        ],
+      ),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent),
+          onPressed: onPressed,
+          child: Text(
+            title,
+            style: context.theme.textTheme.titleMedium
+                ?.copyWith(color: context.theme.colorScheme.inverseSurface),
           ),
         ),
       ),
