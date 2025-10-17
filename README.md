@@ -1,6 +1,6 @@
 # OpenMarket
 
-Um simples aplicativo de compras totalmente livre - de impostos.
+A Simple Flutter Project of an e-commerce, using JSON and BLoC pattern as a State Manager 
 
 ## Getting started
 
