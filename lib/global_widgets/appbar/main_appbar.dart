@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   final String title;
   final Function(String)? onSearch;
-  const MainAppBar({Key? key, required this.title, this.onSearch})
+  final bool hideSearch;
+  const MainAppBar(
+      {Key? key, required this.title, this.onSearch, this.hideSearch = false})
       : super(key: key);
 
   @override
@@ -58,17 +60,19 @@ class _MainAppBarState extends State<MainAppBar> {
               ),
             ),
       actions: [
-        IconButton(
-          icon: Icon(_isSearching ? Icons.close : Icons.search),
-          onPressed: () {
-            setState(() {
-              if (_isSearching) {
-                _searchController.clear();
-              }
-              _isSearching = !_isSearching;
-            });
-          },
-        ),
+        widget.hideSearch == true
+            ? Container()
+            : IconButton(
+                icon: Icon(_isSearching ? Icons.close : Icons.search),
+                onPressed: () {
+                  setState(() {
+                    if (_isSearching) {
+                      _searchController.clear();
+                    }
+                    _isSearching = !_isSearching;
+                  });
+                },
+              ),
       ],
     );
   }
