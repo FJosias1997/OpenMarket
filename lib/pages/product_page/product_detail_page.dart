@@ -65,11 +65,11 @@ class ProductDetailPage extends StatelessWidget {
 
             SizedBox(height: 10),
             Text(
-              'R\$ ' + product.price.toString(),
+              '\$ ' + product.price.toString(),
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
             ),
             Text(
-              'em 7x de R\$' + ((product.price / 7).round()).toString(),
+              'em 7x de \$' + ((product.price / 7).round()).toString(),
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
             ),
             SizedBox(height: 10),

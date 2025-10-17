@@ -28,14 +28,13 @@ class ProductCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'R\$ ' + product.price.toString(),
+                      '\$ ' + product.price.toString(),
                       style: context.theme.textTheme.bodyLarge?.copyWith(
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Text(
-                      "em 7x de R\$ " +
-                          ((product.price / 7).round()).toString(),
+                      "em 7x de \$ " + ((product.price / 7).round()).toString(),
                       style: context.theme.textTheme.bodySmall,
                     ),
                   ],
