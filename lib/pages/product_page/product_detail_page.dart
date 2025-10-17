@@ -1,4 +1,4 @@
-import 'package:openmarket/data/models/post_model.dart';
+import 'package:openmarket/data/models/product_model.dart';
 import 'package:openmarket/global_widgets/buttons/primary_button.dart';
 import 'package:openmarket/global_widgets/buttons/secondary_button.dart';
 import 'package:openmarket/pages/product_page/widgets/products_list_images_widget.dart';

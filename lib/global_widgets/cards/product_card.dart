@@ -1,4 +1,4 @@
-import 'package:openmarket/data/models/post_model.dart';
+import 'package:openmarket/data/models/product_model.dart';
 import 'package:openmarket/extensions/context_extensions.dart';
 import 'package:openmarket/pages/product_page/product_detail_page.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:openmarket/data/models/post_model.dart';
+import 'package:openmarket/data/models/product_model.dart';
 
 abstract class HomeState {}
 
