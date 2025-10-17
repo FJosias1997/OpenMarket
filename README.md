@@ -1,92 +1,99 @@
 # OpenMarket
 
-A Simple Flutter Project of an e-commerce, using JSON and BLoC pattern as a State Manager 
+# ![OpenMarket](https://img.shields.io/badge/OpenMarket-Flutter-blue?style=for-the-badge&logo=flutter)  
 
-## Getting started
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)  
+[![Flutter](https://img.shields.io/badge/Flutter-3.13-blue?logo=flutter)](https://flutter.dev/)  
+[![Dart](https://img.shields.io/badge/Dart-3.3-blue?logo=dart)](https://dart.dev/)  
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+---
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## 📌 About the Project
 
-## Add your files
+**OpenMarket** is a simple e-commerce project developed in Flutter that simulates listing, viewing details, and searching products in a virtual store.  
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+The main goal of this project is to demonstrate **skills in consuming REST APIs, handling JSON data, and managing complex state using the BLoC (Business Logic Component) pattern**.  
+
+The focus is on **clean architecture** and best development practices, ensuring a clear separation between **Data**, **BLoC**, and **UI/Presentation**.
+
+---
+
+## Live Demonstration
+
+![Adobe Express - OpenMarket v2(2)](https://github.com/user-attachments/assets/1fde386b-a23d-4c6d-9d92-8def29a78250)
+
+
+## 🚀 Features
+
+- **Product Listing:** Displays available products on the home screen.  
+- **Product Details:** Allows viewing detailed information (description, price, specifications, etc.).  
+- **Product Search:** Search functionality, as demonstrated in the video (e.g., searching for “eye”).  
+- **BLoC State Management:** Controls the state of the product list and individual item details.  
+- **Action Simulation:** "Buy" and "Add to Cart" buttons (simulated for UI demonstration and navigation flow).
+
+---
+
+## 🛠 Technologies Used
+
+- **[Flutter](https://flutter.dev/)** – Main framework for UI and logic.  
+- **[Dart](https://dart.dev/)** – Programming language.  
+- **BLoC (Business Logic Component)** – State management using Event → State → BLoC pattern.  
+- **REST API / JSON** – Consuming and (de)serializing JSON data.  
+- **Network Packages** – `http` or `dio` (for API consumption).  
+- **Theming** – Custom dark theme.
+
+---
+
+## ⚡ Installation and Running
+
+### Prerequisites
+- Flutter SDK installed.  
+- Emulator or physical device available.
+
+### 1. Clone the Repository
+```bash
+git clone [YOUR_REPOSITORY_URL]
+cd OpenMarket
+```
+
+### 2. Install Dependencies
+```
+flutter pub get
+```
+
+### 3. Run the Application
+```
+flutter run
+```
+
+## Project Structure
+
+Organized in layers separating Data, BLoC, and UI, with state managed exclusively via BLoC:
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/FJosias1997/openmarket.git
-git branch -M main
-git push -uf origin main
+lib/
+├── data/
+│   ├── bloc/         # Home screen Events, States, and BLoC
+│   ├── models/       # Data models (e.g., ProductModel)
+│   └── providers/    # API consumption / Data Sources
+├── extensions/       # Useful BuildContext extensions
+├── global_widgets/   # Reusable widgets
+│   ├── appbar/       # Custom AppBar
+│   ├── buttons/      # Primary and Secondary buttons
+│   └── cards/        # Product display cards
+├── pages/            # Main screens
+│   ├── home_page/    # Product listing screen
+│   └── product_page/ # Product details screen
+└── themes/           # Visual theme (app_theme.dart)
 ```
 
-## Integrate with your tools
+## Architectural Highlights
 
-- [ ] [Set up project integrations](https://gitlab.com/FJosias1997/openmarket/-/settings/integrations)
+BLoC Separation: BLoC, Event, and State files isolated from UI.
 
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+UI Reusability: Widgets centralized in global_widgets for visual consistency.
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is licensed under the MIT
+
